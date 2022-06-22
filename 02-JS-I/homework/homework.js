@@ -211,7 +211,13 @@ function esVocal(letra){
   //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
   // Si no es vocal, tambien debe devolver "Dato incorrecto".
   //Escribe tu código aquí
-  return letra.length > 1 || ['a', 'e', 'i', 'o', 'u'].find(vocal => vocal === letra) === undefined ? 'Dato incorrecto' : 'Es vocal';
+  var vocales = ['a', 'e', 'i', 'o', 'u'];
+  for (var i = 0; i < vocales.length; i++) {
+    if (letra === vocales[i] && letra.length === 1) {
+      return 'Es vocal';
+    }
+  }
+  return 'Dato incorrecto';
 }
 
 
